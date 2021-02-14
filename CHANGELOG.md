@@ -26,6 +26,7 @@ Types of changes:
 ### Fixed
 
 - Fix using `should_call` passes wrong `runtime_self`.
+- Fix pytest `--durations` flag when flexmock is installed.
 
 ## v0.10.4
 
