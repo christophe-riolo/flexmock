@@ -528,16 +528,35 @@ class RegularClass:
 
     def test_should_call_on_class_mock(self):
         class User:
+            def __init__(self):
+                self.value = "value"
+
             def foo(self):
                 return "class"
 
+            def bar(self):
+                return self.value
+
         user1 = User()
         user2 = User()
+
+        # Access class-level method
         flexmock(User).should_call("foo").once()
         assert_raises(MethodCallError, self._tear_down)
         flexmock(User).should_call("foo").twice()
         assert_equal("class", user1.foo())
         assert_equal("class", user2.foo())
+
+        # Access instance attributes
+        flexmock(User).should_call("bar").once()
+        assert_raises(MethodCallError, self._tear_down)
+        flexmock(User).should_call("bar").twice()
+        assert_equal("value", user1.bar())
+        assert_equal("value", user2.bar())
+
+        # Try resetting the expectation
+        flexmock(User).should_call("bar").once()
+        assert_equal("value", user1.bar())
 
     def test_flexmock_should_not_blow_up_on_should_call_for_class_methods(self):
         class User:

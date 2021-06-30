@@ -23,6 +23,10 @@ Types of changes:
 
 - Drop Python 2.7, 3.4, 3.5 support.
 
+### Fixed
+
+- Fix using `should_call` passes wrong `runtime_self`.
+
 ## v0.10.4
 
 - drop Python 2.6, 3.3 and Jython support
