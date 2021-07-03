@@ -1,9 +1,0 @@
-include *.py
-include CHANGELOG
-include LICENSE
-include README.rst
-include requirements*.txt
-recursive-include tests *py *sh
-include docs/conf.py
-include docs/Makefile
-recursive-include docs *.rst
