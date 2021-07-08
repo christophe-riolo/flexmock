@@ -16,7 +16,7 @@ Types of changes:
 
 ### Added
 
-- Add Python 3.6, 3.7, 3.8, 3.9, 3.10 support.
+- Add Python 3.6, 3.7, 3.8, 3.9 support.
 - Improve error message on unmatched method signature expectation.
 
 ### Removed
